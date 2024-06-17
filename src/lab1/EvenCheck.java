@@ -1,8 +1,10 @@
 package lab1;
+
 import java.util.Scanner;
+
 public class EvenCheck {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner (System.in);
+    public void Scan() {
+        Scanner scanner = new Scanner(System.in);
         while (scanner.hasNext()) {
             if (scanner.hasNextDouble()) {
                 double number = scanner.nextDouble();
@@ -16,6 +18,11 @@ public class EvenCheck {
                     System.out.println("Нечетное");
             }
         }
+    }
+
+    public static void main(String[] args) {
+        EvenCheck evenCheck = new EvenCheck();
+        evenCheck.Scan();
     }
 }
 
