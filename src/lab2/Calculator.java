@@ -15,10 +15,10 @@ public class Calculator {
 
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-        System.out.println(calculator.Add(39.0,99.2));
-        System.out.println(calculator.Divide(39.0,99.2));
-        System.out.println(calculator.Multiply(39.0,99.2));
-        System.out.println(calculator.Extract(39.0,99.2));
+        System.out.println(calculator.Add(39.0, 99.2));
+        System.out.println(calculator.Divide(39, 99));
+        System.out.println(calculator.Multiply(39.0, 99.2));
+        System.out.println(calculator.Extract(39.0, 99.2));
     }
 
     static double Add(double num1, double num2) {
@@ -37,12 +37,12 @@ public class Calculator {
         return num1 / num2;
     }
 
-    static int Divide(int num1, int num2) {
-        return num1 / num2;
+    static double Divide(int num1, int num2) {
+        return (double)num1/num2;
     }
 
-    static long Divide(long num1, long num2) {
-        return num1 / num2;
+    static double Divide(long num1, long num2) {
+        return (double)num1 / num2;
     }
 
     static double Multiply(double num1, double num2) {

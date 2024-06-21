@@ -9,7 +9,7 @@ package lab4;
 	Делится на 3 и на 5: ….
  */
 public class DivisionCheck {
-    public static void Divide_3() {
+    public static void dividedBy3() {
         System.out.print("Делится на 3: ");
         for (int i = 1; i <= 100; i++) {
             if (i % 3 == 0) {
@@ -19,7 +19,7 @@ public class DivisionCheck {
         }
     }
 
-    public static void Divide_5() {
+    public static void dividedBy5() {
         System.out.println();
         System.out.print("Делится на 5: ");
         for (int i = 1; i <= 100; i++) {
@@ -30,7 +30,7 @@ public class DivisionCheck {
         }
     }
 
-    public static void Divide_3_5() {
+    public static void dividedBy3And5() {
         System.out.println();
         System.out.print("Делится на 3 и на 5: ");
         for (int i = 1; i <= 100; i++) {
@@ -42,8 +42,8 @@ public class DivisionCheck {
     }
 
     public static void main(String[] args) {
-        Divide_3();
-        Divide_5();
-        Divide_3_5();
+        dividedBy3();
+        dividedBy5();
+        dividedBy3And5();
     }
 }
