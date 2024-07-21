@@ -37,13 +37,25 @@ public class ListOfStrings {
     }
 
     public static void addString(String strings, File file) {
+        FileWriter writer = null;
+        BufferedWriter bufferWriter = null;
         try {
-            FileWriter writer = new FileWriter(file, true);
-            BufferedWriter bufferWriter = new BufferedWriter(writer);
+            writer = new FileWriter(file, true);
+            bufferWriter = new BufferedWriter(writer);
             bufferWriter.write(strings + "\n");
-            bufferWriter.close();
         } catch (IOException e) {
             System.err.println(e.getMessage());
+        } finally {
+            try {
+                if (bufferWriter != null) {
+                    bufferWriter.close();
+                }
+                if (writer != null) {
+                    writer.close();
+                }
+            } catch (IOException e) {
+                System.err.println("Error closing writer: " + e.getMessage());
+            }
         }
         printData(file);
     }
@@ -63,9 +75,9 @@ public class ListOfStrings {
     public static void replacer(File file, File file2) {
         try (BufferedReader reader = new BufferedReader(new FileReader(file));
              BufferedWriter writer = new BufferedWriter(new FileWriter(file2))) {
-             String line = null;
-             while ((line = reader.readLine()) != null) {
-                writer.write(line.replaceAll("[^A-Za-zА-Яа-я0-9ё]", "\\$")+"\n");
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                writer.write(line.replaceAll("[^A-Za-zА-Яа-я0-9ё]", "\\$") + "\n");
             }
         } catch (IOException e) {
             System.err.println(e.getMessage());
